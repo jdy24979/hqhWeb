@@ -1,0 +1,9 @@
+<li nz-submenu [(nzOpen)]="menu.id == curAddress.menu.id" (nzOpenChange)="openChange(menu.id)">
+  <span title  [routerLink]="['/'+ menu.nameEn]">
+    <i class="anticon" ngClass="{{ menu.icon }}"></i>{{ menu.name }}</span>
+  <ul>
+    <li nz-menu-item *ngFor="let subMenu of menu.subList" (click)="subMenuClick(subMenu.id)" [(nzSelected)]="subMenu.id == curAddress.subMenu.id"  [routerLink]="['/'+ menu.nameEn +'/' + subMenu.nameEn]">
+      {{ subMenu.name }}
+    </li>
+  </ul>
+</li>

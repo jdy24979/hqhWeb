@@ -1,0 +1,3 @@
+<ul nz-menu [nzMode]="'inline'" style="height:100%">
+  <app-menu *ngFor="let menu of menu" [menu]="menu" (openChanged)="openChange($event)"></app-menu>
+</ul>
