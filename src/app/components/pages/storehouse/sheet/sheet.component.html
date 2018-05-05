@@ -1,0 +1,38 @@
+<nz-table #nzTable [nzDataSource]="sheetData" [nzPageSize]="10">
+  <thead nz-thead>
+    <tr>
+      <th nz-th nzCheckbox>
+        <label nz-checkbox>
+        </label>
+      </th>
+      <th nz-th>
+        <span>名称</span>
+      </th>
+      <th nz-th>
+        <span>公司</span>
+      </th>
+      <th nz-th>
+        <span>附件</span>
+      </th>
+      <th nz-th>
+        <span>备注</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody nz-tbody>
+    <tr nz-tbody-tr *ngFor="let sheet of sheetData">
+      <td nz-td nzCheckbox>
+          <label nz-checkbox>
+          </label>
+        </td>
+        <td nz-td>
+          {{sheet.name}}
+        </td>
+        <td nz-td>{{sheet.company}}</td>
+        <td nz-td>
+          <a  *ngFor="let path of sheet.path" href="{{ path }}" style="margin-left:10px;" target="_blank">{{path}}</a>
+        </td>
+        <td nz-td>{{sheet.remark}}</td>
+    </tr>
+  </tbody>
+</nz-table>

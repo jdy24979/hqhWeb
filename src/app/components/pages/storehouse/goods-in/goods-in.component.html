@@ -6,28 +6,25 @@
         </label>
       </th>
       <th nz-th>
-        <span>日期</span>
-      </th>
-      <th nz-th>
         <span>货品</span>
       </th>
       <th nz-th>
         <span>规格</span>
       </th>
       <th nz-th>
-        <span>厚度(mm)</span>
+        <span>厚度</span>
       </th>
       <th nz-th>
-        <span>重量(kg)</span>
-      </th>
-      <th nz-th>
-        <span>数量</span>
+        <span>重量</span>
       </th>
       <th nz-th>
         <span>吨价</span>
       </th>
       <th nz-th>
-        <span>单价(元)</span>
+        <span>单价</span>
+      </th>
+      <th nz-th>
+        <span>日期</span>
       </th>
       <th nz-th>
         <span>备注</span>
@@ -41,15 +38,14 @@
         </label>
       </td>
       <td nz-td>
-        <a>{{data.UpdateDate}}</a>
+        {{data.ProductName}}
       </td>
-      <td nz-td>{{data.ProductName}}</td>
       <td nz-td>{{data.ModelName}}</td>
       <td nz-td>{{data.Thickness}}</td>
       <td nz-td>{{data.Weight}}</td>
-      <td nz-td>{{data.Number}}</td>
       <td nz-td>{{data.TPrice}}</td>
       <td nz-td>{{data.UnitPrice}}</td>
+      <td nz-td>{{data.UpdateDate}}</td>
       <td nz-td>{{data.Remarks}}</td>
     </tr>
   </tbody>

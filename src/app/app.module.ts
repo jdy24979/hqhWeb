@@ -24,6 +24,7 @@ import { PriceHistoryComponent } from './components/pages/price/price-history/pr
 import { UsersComponent } from './components/pages/system/users/users.component';
 import { RoleComponent } from './components/pages/system/role/role.component';
 import { DictionaryComponent } from './components/pages/system/dictionary/dictionary.component';
+import { SheetComponent } from './components/pages/storehouse/sheet/sheet.component';
 
 
 
@@ -43,7 +44,8 @@ import { DictionaryComponent } from './components/pages/system/dictionary/dictio
     PriceHistoryComponent,
     UsersComponent,
     RoleComponent,
-    DictionaryComponent
+    DictionaryComponent,
+    SheetComponent
   ],
   imports: [
     BrowserModule,
