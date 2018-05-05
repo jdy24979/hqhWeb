@@ -26,6 +26,11 @@ export class MenuDataService {
           name: "出库",
           id: "100000002",
           nameEn:"goodOut"
+        },
+        {
+          name: "材质单",
+          id: "100000003",
+          nameEn:"sheet"
         }
         ]
       },
@@ -36,17 +41,17 @@ export class MenuDataService {
         icon: "anticon-bank",
         subList: [{
           name: "价格清单",
-          id: "100000003",
+          id: "100000004",
           nameEn:"list"
         },
         {
           name: "价格维护",
-          id: "100000004",
+          id: "100000005",
           nameEn:"option"
         },
         {
           name: "历史价格",
-          id: "100000005",
+          id: "100000006",
           nameEn:"history"
         }]
       },
@@ -57,17 +62,17 @@ export class MenuDataService {
         icon: "anticon-folder",
         subList: [{
           name: "库存报表",
-          id: "100000006",
-          nameEn:"goodList"
-        },
-        {
-          name: "入库报表",
           id: "100000007",
           nameEn:"goodList"
         },
         {
-          name: "出库报表",
+          name: "入库报表",
           id: "100000008",
+          nameEn:"goodList"
+        },
+        {
+          name: "出库报表",
+          id: "100000009",
           nameEn:"goodList"
         }]
       },
@@ -78,17 +83,17 @@ export class MenuDataService {
         icon: "anticon-desktop",
         subList: [{
           name: "用户",
-          id: "100000009",
+          id: "100000010",
           nameEn:"users"
         },
         {
           name: "角色",
-          id: "100000010",
+          id: "100000011",
           nameEn:"role"
         },
         {
           name: "数据字典",
-          id: "100000011",
+          id: "100000012",
           nameEn:"dictionary"
         }]
       }
