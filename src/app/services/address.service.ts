@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
-import { MenuModule } from '../models/menu/menu.module';
-import { MenuDataService } from '../services/menu-data.service';
 import { AddressModule } from '../models/address/address.module';
 
 @Injectable()
 export class AddressService {
 
-  menuData:MenuModule[];
+  menuData;
   curMenuId:string;
   curSubMenuId:string;
   curAddress:AddressModule;
 
-  constructor(public menuDataService:MenuDataService) { 
+  constructor() { 
+    
+  }
+
+  initAddress(menuData){
+    console.log(menuData)
     this.curAddress = new AddressModule;
-    this.menuData = this.menuDataService.getMenu();
+    this.menuData = menuData;
     this.curAddress.menu = this.menuData[0];
     this.curMenuId = this.menuData[0].id;
     this.curAddress.subMenu = this.menuData[0].subList[0];

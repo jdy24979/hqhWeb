@@ -12,10 +12,11 @@ export class NavBarComponent implements OnInit {
   curAddress:AddressModule;
 
   constructor(public addressService:AddressService) {
-    this.curAddress = this.addressService.getCurAddress();
+    
   }
 
   ngOnInit() {
+    this.curAddress = this.addressService.getCurAddress();
   }
 
 }

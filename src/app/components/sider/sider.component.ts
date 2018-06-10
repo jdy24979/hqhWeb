@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuDataService } from '../../services/menu-data.service';
-import { MenuModule } from '../../models/menu/menu.module';
 import { AddressService } from '../../services/address.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-sider',
   templateUrl: './sider.component.html',
@@ -10,13 +9,14 @@ import { AddressService } from '../../services/address.service';
 })
 export class SiderComponent implements OnInit {
 
-  menu:MenuModule[];
+  menu;
   
-  constructor(public menuDataService:MenuDataService,public addressService:AddressService) {
-    this.menu = this.menuDataService.getMenu();
+  constructor(private http: HttpClient,public menuDataService:MenuDataService,public addressService:AddressService) {
+    this.menu = menuDataService.menu;
   }
 
   ngOnInit() {
+    this.addressService.initAddress(this.menu);
   }
   openChange(id){
     this.addressService.setMenu(id);

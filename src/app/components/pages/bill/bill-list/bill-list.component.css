@@ -1,0 +1,10 @@
+button{
+    float: right;
+    margin-left:10px;
+    margin-bottom:10px;
+}
+.unsettled{
+    margin: 0 32px;
+    display: inline-block;
+    line-height: 32px;
+}

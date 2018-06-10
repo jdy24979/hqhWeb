@@ -25,6 +25,12 @@ import { UsersComponent } from './components/pages/system/users/users.component'
 import { RoleComponent } from './components/pages/system/role/role.component';
 import { DictionaryComponent } from './components/pages/system/dictionary/dictionary.component';
 import { SheetComponent } from './components/pages/storehouse/sheet/sheet.component';
+import { BillTotalComponent } from './components/pages/bill/bill-total/bill-total.component';
+import { BillListComponent } from './components/pages/bill/bill-list/bill-list.component';
+import { BillDetailComponent } from './components/pages/bill/bill-detail/bill-detail.component';
+import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 
@@ -45,7 +51,13 @@ import { SheetComponent } from './components/pages/storehouse/sheet/sheet.compon
     UsersComponent,
     RoleComponent,
     DictionaryComponent,
-    SheetComponent
+    SheetComponent,
+    BillTotalComponent,
+    BillListComponent,
+    BillDetailComponent,
+    IndexComponent,
+    LoginComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

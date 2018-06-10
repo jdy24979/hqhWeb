@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MenuModule } from '../../models/menu/menu.module';
 import { AddressService } from '../../services/address.service';
 import { AddressModule } from '../../models/address/address.module';
 @Component({
@@ -9,7 +8,7 @@ import { AddressModule } from '../../models/address/address.module';
 })
 export class MenuComponent implements OnInit {
 
-  @Input("menu") menu: MenuModule;
+  @Input("menu") menu;
 
   curAddress: AddressModule;
   @Output() openChanged = new EventEmitter<string>();
