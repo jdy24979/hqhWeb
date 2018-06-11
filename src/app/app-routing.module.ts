@@ -12,21 +12,30 @@ import { PriceHistoryComponent } from "./components/pages/price/price-history/pr
 import { UsersComponent } from "./components/pages/system/users/users.component";
 import { RoleComponent } from "./components/pages/system/role/role.component";
 import { DictionaryComponent } from "./components/pages/system/dictionary/dictionary.component";
+
+import { BillTotalComponent } from"./components/pages/bill/bill-total/bill-total.component";
+import { BillListComponent } from"./components/pages/bill/bill-list/bill-list.component";    
+import { BillDetailComponent } from"./components/pages/bill/bill-detail/bill-detail.component";
+
 const routes: Routes = [
-    {path:"/",component:GoodListComponent},
-    {path:"storehouse",component:GoodListComponent},
-    {path:"storehouse/goodList",component:GoodListComponent},
-    {path:"storehouse/goodIn",component:GoodsInComponent},
-    {path:"storehouse/goodOut",component:GoodsOutComponent},
-    {path:"storehouse/sheet",component:SheetComponent},
-    {path:"price",component:PriceListComponent},
-    {path:"price/list",component:PriceListComponent},
-    {path:"price/option",component:PriceOptionComponent},
-    {path:"price/history",component:PriceHistoryComponent},
-    {path:"system",component:PriceListComponent},
-    {path:"system/users",component:PriceListComponent},
-    {path:"system/role",component:PriceOptionComponent},
-    {path:"system/dictionary",component:PriceHistoryComponent},
+    // {path:"/",component:GoodListComponent},
+    {path:"home/storehouse",component:GoodListComponent},
+    {path:"home/storehouse/goodsList",component:GoodListComponent},
+    {path:"home/storehouse/goodsIn",component:GoodsInComponent},
+    {path:"home/storehouse/goodsOut",component:GoodsOutComponent},
+    {path:"home/storehouse/sheet",component:SheetComponent},
+    {path:"home/price",component:PriceListComponent},
+    {path:"home/price/list",component:PriceListComponent},
+    {path:"home/price/option",component:PriceOptionComponent},
+    {path:"home/price/history",component:PriceHistoryComponent},
+    {path:"home/system",component:PriceListComponent},
+    {path:"home/system/users",component:PriceListComponent},
+    {path:"home/system/role",component:PriceOptionComponent},
+    {path:"home/system/dictionary",component:PriceHistoryComponent},
+    {path:"home/bill",component:BillTotalComponent},
+    {path:"home/bill/billTotal",component:BillTotalComponent},
+    {path:"home/bill/list",component:BillListComponent},
+    {path:"home/bill/detail",component:BillDetailComponent},
 ];
 
 @NgModule({

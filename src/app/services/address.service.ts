@@ -14,7 +14,7 @@ export class AddressService {
   }
 
   initAddress(menuData){
-    console.log(menuData)
+    // console.log(menuData)
     this.curAddress = new AddressModule;
     this.menuData = menuData;
     this.curAddress.menu = this.menuData[0];
