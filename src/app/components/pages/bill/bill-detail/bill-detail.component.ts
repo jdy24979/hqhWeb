@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { PageInfoService } from '../../../../services/page-info.service';
 
 @Component({
-  selector: 'app-detail',
+  selector: 'app-bill-detail',
   templateUrl: './bill-detail.component.html',
   styleUrls: ['./bill-detail.component.css']
 })

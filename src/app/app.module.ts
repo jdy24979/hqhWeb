@@ -13,6 +13,7 @@ import { SiderComponent } from './components/sider/sider.component';
 import { MainComponent } from './components/main/main.component';
 import { MenuDataService } from './services/menu-data.service';
 import { AddressService } from './services/address.service';
+import { PageInfoService } from './services/page-info.service';
 import { MenuComponent } from './components/menu/menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { GoodsInComponent } from './components/pages/storehouse/goods-in/goods-in.component';
@@ -31,6 +32,7 @@ import { BillDetailComponent } from './components/pages/bill/bill-detail/bill-de
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { BillAddComponent } from './components/pages/bill/bill-add/bill-add.component';
 
 
 
@@ -57,7 +59,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     BillDetailComponent,
     IndexComponent,
     LoginComponent,
-    LoadingComponent
+    LoadingComponent,
+    BillAddComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     NgZorroAntdModule.forRoot(),
     AppRoutingModule
   ],
-  providers:[MenuDataService,AddressService],
+  providers:[MenuDataService,AddressService,PageInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

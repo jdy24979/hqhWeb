@@ -16,6 +16,7 @@ import { DictionaryComponent } from "./components/pages/system/dictionary/dictio
 import { BillTotalComponent } from"./components/pages/bill/bill-total/bill-total.component";
 import { BillListComponent } from"./components/pages/bill/bill-list/bill-list.component";    
 import { BillDetailComponent } from"./components/pages/bill/bill-detail/bill-detail.component";
+import { BillAddComponent } from"./components/pages/bill/bill-add/bill-add.component";
 
 const routes: Routes = [
     // {path:"/",component:GoodListComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
     {path:"home/bill/billTotal",component:BillTotalComponent},
     {path:"home/bill/list",component:BillListComponent},
     {path:"home/bill/detail",component:BillDetailComponent},
+    {path:"home/bill/add",component:BillAddComponent}
 ];
 
 @NgModule({

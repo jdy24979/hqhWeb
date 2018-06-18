@@ -27,8 +27,9 @@ export class GoodsInComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.post('localhost:8080/api/getGoodsIn',{
-      name:'jdy'
+    this.http.post('./api/billTotal/list',{
+      name:"",
+      type:null
     }).subscribe(res => {
       this.data = res;
       console.log(this.data);
