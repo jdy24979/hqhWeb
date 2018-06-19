@@ -9,7 +9,7 @@
   </div>
   <div class="user" nz-col [nzSpan]="8" [nzOffset]="8">
     <i class="userIcon anticon anticon-user"></i>
-    <span class="userName">贾丁阳</span>
-    <a href="javascript:void(0);" class="logout">注销</a>
+    <span class="userName">{{ username }}</span>
+    <a href="javascript:void(0);" class="logout" (click)="logout()">注销</a>
   </div>
 </div>

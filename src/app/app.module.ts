@@ -33,6 +33,9 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { BillAddComponent } from './components/pages/bill/bill-add/bill-add.component';
+import { ProductComponent } from './components/pages/product/product/product.component';
+import { ModelComponent } from './components/pages/product/model/model.component';
+import { SpecComponent } from './components/pages/product/spec/spec.component';
 
 
 
@@ -60,7 +63,10 @@ import { BillAddComponent } from './components/pages/bill/bill-add/bill-add.comp
     IndexComponent,
     LoginComponent,
     LoadingComponent,
-    BillAddComponent
+    BillAddComponent,
+    ProductComponent,
+    ModelComponent,
+    SpecComponent
   ],
   imports: [
     BrowserModule,

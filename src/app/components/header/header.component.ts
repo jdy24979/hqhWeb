@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  username:String;
+
   constructor() { }
 
   ngOnInit() {
+    this.username = sessionStorage.getItem("username");
+  }
+
+  logout () {
+    location.href = "./login";
   }
 
 }

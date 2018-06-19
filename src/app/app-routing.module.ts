@@ -9,17 +9,17 @@ import { PriceListComponent } from "./components/pages/price/price-list/price-li
 import { PriceOptionComponent } from "./components/pages/price/price-option/price-option.component";
 import { PriceHistoryComponent } from "./components/pages/price/price-history/price-history.component";
 
-import { UsersComponent } from "./components/pages/system/users/users.component";
-import { RoleComponent } from "./components/pages/system/role/role.component";
-import { DictionaryComponent } from "./components/pages/system/dictionary/dictionary.component";
-
 import { BillTotalComponent } from"./components/pages/bill/bill-total/bill-total.component";
 import { BillListComponent } from"./components/pages/bill/bill-list/bill-list.component";    
 import { BillDetailComponent } from"./components/pages/bill/bill-detail/bill-detail.component";
 import { BillAddComponent } from"./components/pages/bill/bill-add/bill-add.component";
 
+import { ProductComponent } from "./components/pages/product/product/product.component";
+import { ModelComponent } from "./components/pages/product/model/model.component";
+import { SpecComponent } from "./components/pages/product/spec/spec.component";
+
 const routes: Routes = [
-    // {path:"/",component:GoodListComponent},
+    {path:"",component:GoodListComponent},
     {path:"home/storehouse",component:GoodListComponent},
     {path:"home/storehouse/goodsList",component:GoodListComponent},
     {path:"home/storehouse/goodsIn",component:GoodsInComponent},
@@ -37,7 +37,11 @@ const routes: Routes = [
     {path:"home/bill/billTotal",component:BillTotalComponent},
     {path:"home/bill/list",component:BillListComponent},
     {path:"home/bill/detail",component:BillDetailComponent},
-    {path:"home/bill/add",component:BillAddComponent}
+    {path:"home/bill/add",component:BillAddComponent},
+    {path:"home/product",component:ProductComponent},
+    {path:"home/product/product",component:ProductComponent},
+    {path:"home/product/model",component:ModelComponent},
+    {path:"home/product/spec",component:SpecComponent}
 ];
 
 @NgModule({
