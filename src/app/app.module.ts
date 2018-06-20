@@ -38,6 +38,7 @@ import { ModelComponent } from './components/pages/product/model/model.component
 import { SpecComponent } from './components/pages/product/spec/spec.component';
 
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { SpecComponent } from './components/pages/product/spec/spec.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[MenuDataService,AddressService,PageInfoService],
   bootstrap: [AppComponent]

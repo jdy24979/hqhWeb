@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { PageInfoService } from '../../../../services/page-info.service';
 import { HttpClient } from '@angular/common/http';
-import { NzModalService } from 'ng-zorro-antd'; 
-import { NzMessageService } from 'ng-zorro-antd'; 
+import { Component, OnInit } from '@angular/core';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { PageInfoService } from '../../../../services/page-info.service';
 
 @Component({
   selector: 'app-bill-add',
