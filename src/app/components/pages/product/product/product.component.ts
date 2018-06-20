@@ -114,12 +114,12 @@ export class ProductComponent implements OnInit {
     this._refreshStatus();
   }
   showConfirm = () => {
-    let selecteds =[];
+    let ids =[];
     let str = "";
     for(let i=0;i < this.data.length;i++){
       if(this.data[i].checked){
-        selecteds.push(i);
-        str += this.data[i].product_name +","
+        ids.push(this.data[i].id);
+        str += this.data[i].name +","
       }
     }
     var that = this;
@@ -127,11 +127,17 @@ export class ProductComponent implements OnInit {
       title  : '是否确认删除',
       content: '<b>产品:' + str + '</b>',
       onOk() {
-        for (let i = 0; i < selecteds.length; i++) {
-          const element = selecteds[i];
-          that.data.splice(element-i,1)
-        }
-        that._refreshStatus();
+        that.http.post('./api/product/productDelete',{
+          ids:ids
+        }).subscribe(res =>{
+          if(res['code'] == 0){
+            that.createMessage('success', '删除成功');
+            that._refreshStatus();
+          }else{
+            that.createMessage('error', '系统异常');
+          }
+        })
+       
       },
       onCancel() {
       }
