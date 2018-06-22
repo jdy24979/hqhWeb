@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators 
 } from '@angular/forms';
+import { SortDataService } from '../../../../services/sort-data.service';
 
 @Component({
   selector: 'app-product',
@@ -14,6 +15,7 @@ import {
 })
 export class ProductComponent implements OnInit {
   validateForm:FormGroup;
+  putValidateForm:FormGroup;
 
   query: {
     name: String;
@@ -22,14 +24,19 @@ export class ProductComponent implements OnInit {
 
   data;
   addInfo;
+  putInfo;
 
-  constructor(private _message: NzMessageService, private http: HttpClient,private fb: FormBuilder,private modalService: NzModalService) {
+  constructor(private _message: NzMessageService, private http: HttpClient,private fb: FormBuilder,private modalService: NzModalService,private sortService: SortDataService) {
     this.data = [];
     this.query = {
       name: "",
       order: null
     }
     this.addInfo = {
+      name: "",
+      order: ''
+    }
+    this.putInfo = {
       name: "",
       order: ''
     }
@@ -43,13 +50,17 @@ export class ProductComponent implements OnInit {
   getData() {
     this.http.post('./api/product/productList', this.query)
       .subscribe(res => {
-        this.data = res['list'];
+        this.data = this.sortService.sort(res['list']);
       });
   }
 
   ngOnInit() {
     this.getData();
     this.validateForm = this.fb.group({
+      name: [ null, [ Validators.required ] ],
+      order: [ null, [ Validators.required ] ]
+    });
+    this.putValidateForm = this.fb.group({
       name: [ null, [ Validators.required ] ],
       order: [ null, [ Validators.required ] ]
     });
@@ -87,6 +98,44 @@ export class ProductComponent implements OnInit {
 
   handleCancel = (e) => {
     this.isVisible = false;
+  };
+
+  //修改界面模态框
+
+  putClick (data){
+    this.putInfo.name = data.name;
+    this.putInfo.id = data.id;
+    this.putInfo.order = data.order;
+    this.putIsVisible = true;
+  }
+
+  putIsVisible = false;
+  putIsConfirmLoading = false;
+  putShowModal = () => {
+    this.putIsVisible = true;
+  };
+  putHandleOk = (e) => {
+    this.putIsConfirmLoading = true;
+    this.http.post('./api/product/productPut', this.putInfo)
+      .subscribe(res => {
+        if (res['code'] == 0) {
+          this.putIsConfirmLoading = false;
+          this.putIsVisible = false;
+          this.createMessage('success', '修改成功');
+          this.getData();
+          this.putInfo = {
+            name: "",
+            order: ''
+          }
+        } else {
+          this.putIsConfirmLoading = false;
+          this.createMessage('error', '系统异常');
+        }
+      })
+  };
+
+  putHandleCancel = (e) => {
+    this.putIsVisible = false;
   };
   
   //confirm

@@ -13,6 +13,7 @@ import { SiderComponent } from './components/sider/sider.component';
 import { MainComponent } from './components/main/main.component';
 import { MenuDataService } from './services/menu-data.service';
 import { AddressService } from './services/address.service';
+import { SortDataService } from './services/sort-data.service';
 import { PageInfoService } from './services/page-info.service';
 import { MenuComponent } from './components/menu/menu.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -78,7 +79,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers:[MenuDataService,AddressService,PageInfoService],
+  providers:[MenuDataService,AddressService,PageInfoService,SortDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
