@@ -181,6 +181,7 @@ export class ProductComponent implements OnInit {
         }).subscribe(res =>{
           if(res['code'] == 0){
             that.createMessage('success', '删除成功');
+            that.getData();
             that._refreshStatus();
           }else{
             that.createMessage('error', '系统异常');

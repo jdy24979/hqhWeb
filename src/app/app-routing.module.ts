@@ -8,6 +8,7 @@ import { PriceHistoryComponent } from "./components/pages/price/price-history/pr
 import { PriceListComponent } from "./components/pages/price/price-list/price-list.component";
 import { PriceOptionComponent } from "./components/pages/price/price-option/price-option.component";
 import { ModelComponent } from "./components/pages/product/model/model.component";
+import { ModelAddComponent } from "./components/pages/product/model/model-add/model-add.component";
 import { ProductComponent } from "./components/pages/product/product/product.component";
 import { SpecComponent } from "./components/pages/product/spec/spec.component";
 import { GoodListComponent } from "./components/pages/storehouse/good-list/good-list.component";
@@ -41,6 +42,7 @@ const routelist = [
     { path: "home/product", component: ProductComponent },
     { path: "home/product/product", component: ProductComponent },
     { path: "home/product/model", component: ModelComponent },
+    { path: "home/product/model/add", component: ModelAddComponent },
     { path: "home/product/spec", component: SpecComponent }
 ];
 const routes: Routes = routelist;

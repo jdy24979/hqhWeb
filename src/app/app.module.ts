@@ -40,6 +40,7 @@ import { SpecComponent } from './components/pages/product/spec/spec.component';
 
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModelAddComponent } from './components/pages/product/model/model-add/model-add.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BillAddComponent,
     ProductComponent,
     ModelComponent,
-    SpecComponent
+    SpecComponent,
+    ModelAddComponent
   ],
   imports: [
     BrowserModule,
