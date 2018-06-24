@@ -11,8 +11,10 @@ import { ModelComponent } from "./components/pages/product/model/model.component
 import { ModelAddComponent } from "./components/pages/product/model/model-add/model-add.component";
 import { ProductComponent } from "./components/pages/product/product/product.component";
 import { SpecComponent } from "./components/pages/product/spec/spec.component";
+import { SpecAddComponent } from "./components/pages/product/spec/spec-add/spec-add.component";
 import { GoodListComponent } from "./components/pages/storehouse/good-list/good-list.component";
 import { GoodsInComponent } from "./components/pages/storehouse/goods-in/goods-in.component";
+import { GoodsInAddComponent } from "./components/pages/storehouse/goods-in/goods-in-add/goods-in-add.component";
 import { GoodsOutComponent } from "./components/pages/storehouse/goods-out/goods-out.component";
 import { SheetComponent } from "./components/pages/storehouse/sheet/sheet.component";
 
@@ -24,6 +26,7 @@ const routelist = [
     { path: "home/storehouse", component: GoodListComponent },
     { path: "home/storehouse/goodsList", component: GoodListComponent },
     { path: "home/storehouse/goodsIn", component: GoodsInComponent },
+    { path: "home/storehouse/goodsIn/add", component: GoodsInAddComponent },
     { path: "home/storehouse/goodsOut", component: GoodsOutComponent },
     { path: "home/storehouse/sheet", component: SheetComponent },
     { path: "home/price", component: PriceListComponent },
@@ -43,7 +46,8 @@ const routelist = [
     { path: "home/product/product", component: ProductComponent },
     { path: "home/product/model", component: ModelComponent },
     { path: "home/product/model/add", component: ModelAddComponent },
-    { path: "home/product/spec", component: SpecComponent }
+    { path: "home/product/spec", component: SpecComponent },
+    { path: "home/product/spec/add", component: SpecAddComponent }
 ];
 const routes: Routes = routelist;
 

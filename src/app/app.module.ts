@@ -41,6 +41,8 @@ import { SpecComponent } from './components/pages/product/spec/spec.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModelAddComponent } from './components/pages/product/model/model-add/model-add.component';
+import { SpecAddComponent } from './components/pages/product/spec/spec-add/spec-add.component';
+import { GoodsInAddComponent } from './components/pages/storehouse/goods-in/goods-in-add/goods-in-add.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { ModelAddComponent } from './components/pages/product/model/model-add/mo
     ProductComponent,
     ModelComponent,
     SpecComponent,
-    ModelAddComponent
+    ModelAddComponent,
+    SpecAddComponent,
+    GoodsInAddComponent
   ],
   imports: [
     BrowserModule,

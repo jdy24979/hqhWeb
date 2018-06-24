@@ -1,3 +1,46 @@
+<form nz-form class="ant-advanced-search-form">
+  <div nz-row [nzGutter]="40">
+    <div nz-col [nzSpan]="8">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="5">
+          <label [attr.for]="'queryProductName'">产品名称</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="16">
+          <nz-input [nzSize]="'large'" [(ngModel)]="query.productName" name="queryProductName" [nzPlaceHolder]="'请输入产品名称'" [nzId]="'queryProductName'"></nz-input>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="5">
+          <label [attr.for]="'queryModelName'">型号名称</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="16">
+          <nz-input [nzSize]="'large'" [(ngModel)]="query.modelName" name="queryModelName" [nzPlaceHolder]="'请输入型号名称'" [nzId]="'queryModelName'"></nz-input>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="5">
+          <label [attr.for]="'queryOrder'">编号</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="16">
+          <nz-input [nzSize]="'large'" [(ngModel)]="query.order" name="queryOrder" [nzPlaceHolder]="'请输入编号'" [nzId]="'queryOrder'"></nz-input>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-row>
+    <div nz-col [nzSpan]="24">
+      <button nz-button [nzType]="'primary'" (click)="getData()">搜索</button>
+      <button nz-button (click)="resetForm()">清空</button>
+      <button nz-button [nzType]="'primary'" [routerLink]="['/home/storehouse/goodsIn/add']" style="float: left;">
+        新增
+      </button>
+    </div>
+  </div>
+</form>
 <nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10">
   <thead nz-thead>
     <tr>
@@ -6,16 +49,19 @@
         </label>
       </th>
       <th nz-th>
-        <span>货品</span>
+        <span>编号</span>
+      </th>
+      <th nz-th>
+        <span>产品</span>
+      </th>
+      <th nz-th>
+        <span>型号</span>
       </th>
       <th nz-th>
         <span>规格</span>
       </th>
       <th nz-th>
-        <span>厚度</span>
-      </th>
-      <th nz-th>
-        <span>重量</span>
+        <span>数量</span>
       </th>
       <th nz-th>
         <span>吨价</span>
@@ -24,10 +70,13 @@
         <span>单价</span>
       </th>
       <th nz-th>
-        <span>日期</span>
+        <span>是否含税</span>
       </th>
       <th nz-th>
-        <span>备注</span>
+        <span>是否回票</span>
+      </th>
+      <th nz-th>
+        <span>日期</span>
       </th>
     </tr>
   </thead>
@@ -38,15 +87,16 @@
         </label>
       </td>
       <td nz-td>
-        {{data.ProductName}}
+        {{data.order}}
       </td>
-      <td nz-td>{{data.ModelName}}</td>
-      <td nz-td>{{data.Thickness}}</td>
-      <td nz-td>{{data.Weight}}</td>
-      <td nz-td>{{data.TPrice}}</td>
-      <td nz-td>{{data.UnitPrice}}</td>
-      <td nz-td>{{data.UpdateDate}}</td>
-      <td nz-td>{{data.Remarks}}</td>
+      <td nz-td>{{data.product_name}}</td>
+      <td nz-td>{{data.model_name}}</td>
+      <td nz-td>{{data.spec_name}}</td>
+      <td nz-td>{{data.number}}</td>
+      <td nz-td>{{data.t_price}}</td>
+      <td nz-td>{{data.unit_price}}</td>
+      <td nz-td>{{data.tax}}</td>
+      <td nz-td>{{data.invoice}}</td>
     </tr>
   </tbody>
 </nz-table>

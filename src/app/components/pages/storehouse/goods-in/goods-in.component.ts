@@ -7,33 +7,35 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GoodsInComponent implements OnInit {
 
-  data;
+  data=[];
+  query;
   constructor(private http: HttpClient) { 
     
-    this.data = [
-      {
-        ProductName:"方管",
-        ModelName:"40*40",
-        Thickness:"2.0",
-        Weight:"15",
-        Length:"6",
-        TPrice:"4310",
-        UpdateDate:"2018-4-10",
-        Number:"100",
-        UnitPrice:"30",
-        Remarks:"a"
-      }
-    ]
   }
 
   ngOnInit() {
-    this.http.post('./api/billTotal/list',{
-      name:"",
-      type:null
-    }).subscribe(res => {
-      this.data = res;
-      console.log(this.data);
+    this.query = {
+      productName: "",
+      modelName: "",
+      specName:"",
+      order: ""
+    }
+    this.getData();
+  }
+
+  getData(){
+    this.http.post('./api/storehouse/goodsInList',this.query).subscribe(res => {
+      this.data = res['list'];
     });
+  }
+
+  resetForm() {
+    this.query = {
+      productName: "",
+      specName:"",
+      modelName: "",
+      order: ""
+    }
   }
 
 }
