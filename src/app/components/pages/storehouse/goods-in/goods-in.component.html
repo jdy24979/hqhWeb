@@ -95,8 +95,9 @@
       <td nz-td>{{data.number}}</td>
       <td nz-td>{{data.t_price}}</td>
       <td nz-td>{{data.unit_price}}</td>
-      <td nz-td>{{data.tax}}</td>
-      <td nz-td>{{data.invoice}}</td>
+      <td nz-td>{{data.tax == 0 ? '不含税' : '含税'}}</td>
+      <td nz-td>{{data.invoice == 0 ? '未回' : '已回'}}</td>
+      <td nz-td>{{data.update_date | date:'yyyy-MM-dd'}}</td>
     </tr>
   </tbody>
 </nz-table>

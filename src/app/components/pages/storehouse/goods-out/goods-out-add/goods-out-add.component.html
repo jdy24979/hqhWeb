@@ -58,6 +58,9 @@
         <span>规格</span>
       </th>
       <th nz-th>
+        <span>数量</span>
+      </th>
+      <th nz-th>
         <span>
           操作
         </span>
@@ -76,6 +79,7 @@
       <td nz-td>{{data.product_name}}</td>
       <td nz-td>{{data.model_name}}</td>
       <td nz-td>{{data.spec_name}}</td>
+      <td nz-td>{{data.number}}</td>
       <td nz-td>
         <a href="javascript:void(0);" (click)="addClick(data)">新建</a>
       </td>
@@ -84,7 +88,7 @@
 </nz-table>
 
 <!-- 模态框 -->
-<nz-modal [nzVisible]="isVisible" [nzTitle]="'新增产品'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)"
+<nz-modal [nzVisible]="isVisible" [nzTitle]="'新建出库单'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)"
   [nzConfirmLoading]="isConfirmLoading">
   <ng-template #modalContent>
     <form nz-form [formGroup]="validateForm">
@@ -103,59 +107,9 @@
           <div nz-form-explain *ngIf="validateForm.controls.number.dirty&&validateForm.controls.number.hasError('required')">请输入数量</div>
         </div>
       </div>
-      <div nz-form-item nz-row>
-        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="addInfo.unitPrice" nz-form-item-required>单价</label>
-        </div>
-        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
-          <nz-input [nzSize]="'large'" formControlName="unitPrice" [(ngModel)]="addInfo.unitPrice" name="addInfoUnitPrice"
-            [nzId]="'addInfo.unitPrice'"></nz-input>
-          <div nz-form-explain *ngIf="validateForm.controls.unitPrice.dirty&&validateForm.controls.unitPrice.hasError('required')">请输入产品编号</div>
-        </div>
-      </div>
-      <div nz-form-item nz-row>
-        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="addInfo.TPrice" nz-form-item-required>吨价</label>
-        </div>
-        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
-          <nz-input [nzSize]="'large'" formControlName="TPrice" [(ngModel)]="addInfo.TPrice" name="addInfoTPrice"
-            [nzId]="'addInfo.TPrice'"></nz-input>
-          <div nz-form-explain *ngIf="validateForm.controls.TPrice.dirty&&validateForm.controls.TPrice.hasError('required')">请输入产品编号</div>
-        </div>
-      </div>
-      <div nz-form-item nz-row>
-        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="addInfo.tax" nz-form-item-required>是否含税</label>
-        </div>
-        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
-          <nz-radio-group [(ngModel)]="addInfo.tax" formControlName="tax">
-            <label nz-radio-button [nzValue]="'1'">
-              <span>含税</span>
-            </label>
-            <label nz-radio-button [nzValue]="'0'">
-              <span>不含税</span>
-            </label>
-          </nz-radio-group>
-        </div>
-      </div>
-      <div nz-form-item nz-row>
-        <div nz-form-label nz-col [nzSm]="6" [nzXs]="24">
-          <label for="addInfo.invoice" nz-form-item-required>是否回票</label>
-        </div>
-        <div nz-form-control nz-col [nzSm]="14" [nzXs]="24" nzHasFeedback>
-          <nz-radio-group [(ngModel)]="addInfo.invoice"  formControlName="invoice">
-            <label nz-radio-button [nzValue]="'1'">
-              <span>已回</span>
-            </label>
-            <label nz-radio-button [nzValue]="'0'">
-              <span>未回</span>
-            </label>
-          </nz-radio-group>
-        </div>
-      </div>
     </form>
   </ng-template>
 </nz-modal>
 <!-- 模态框END -->
 
-<button id="goBack" [routerLink]="['/home/storehouse/goodsIn']"></button>
+<button id="goBack" [routerLink]="['/home/storehouse/goodsOut']"></button>

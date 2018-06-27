@@ -16,6 +16,7 @@ import { GoodListComponent } from "./components/pages/storehouse/good-list/good-
 import { GoodsInComponent } from "./components/pages/storehouse/goods-in/goods-in.component";
 import { GoodsInAddComponent } from "./components/pages/storehouse/goods-in/goods-in-add/goods-in-add.component";
 import { GoodsOutComponent } from "./components/pages/storehouse/goods-out/goods-out.component";
+import { GoodsOutAddComponent } from "./components/pages/storehouse/goods-out/goods-out-add/goods-out-add.component";
 import { SheetComponent } from "./components/pages/storehouse/sheet/sheet.component";
 
 
@@ -28,6 +29,7 @@ const routelist = [
     { path: "home/storehouse/goodsIn", component: GoodsInComponent },
     { path: "home/storehouse/goodsIn/add", component: GoodsInAddComponent },
     { path: "home/storehouse/goodsOut", component: GoodsOutComponent },
+    { path: "home/storehouse/goodsOut/add", component: GoodsOutAddComponent },
     { path: "home/storehouse/sheet", component: SheetComponent },
     { path: "home/price", component: PriceListComponent },
     { path: "home/price/list", component: PriceListComponent },
