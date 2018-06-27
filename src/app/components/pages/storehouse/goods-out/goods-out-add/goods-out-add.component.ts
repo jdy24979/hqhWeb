@@ -87,7 +87,6 @@ export class GoodsOutAddComponent implements OnInit {
   };
   handleOk = (e) => {
     this.isConfirmLoading = true;
-    console.log(this.addInfo)
     this.http.post('./api/storehouse/goodsOutAdd', this.addInfo)
       .subscribe(res => {
         if (res['code'] == 0) {
