@@ -13,15 +13,32 @@ export class GoodListComponent implements OnInit {
   constructor(public http: HttpClient) { 
   }
 
+  options = [];
   ngOnInit() {
     this.query = {
-      productName: "",
-      modelName: "",
-      specName:"",
-      order: ""
+      order: "",
+      productId:"",
+      modelId:"",
+      specId:""
     }
+    this.getProduct();
     this.data = [];
     this.getData();
+  }
+
+  products=[];
+  getProduct(){
+    this.http.get("./api/product/productSelect").subscribe(res => {
+      this.products = res['list']
+    })
+  }
+  models=[];
+  getModel(){
+    this.http.post("./api/model/modelSelect",{
+      productId:this.query.productId
+    }).subscribe(res => {
+      this.models = res['list']
+    })
   }
 
   getData(){
@@ -32,10 +49,10 @@ export class GoodListComponent implements OnInit {
 
   resetForm() {
     this.query = {
-      productName: "",
-      specName:"",
-      modelName: "",
-      order: ""
+      order: "",
+      productId:"",
+      modelId:"",
+      specId:""
     }
   }
 

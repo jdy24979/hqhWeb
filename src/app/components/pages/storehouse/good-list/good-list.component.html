@@ -6,7 +6,11 @@
           <label [attr.for]="'queryProductName'">产品名称</label>
         </div>
         <div nz-form-control nz-col [nzSpan]="16">
-          <nz-input [nzSize]="'large'" [(ngModel)]="query.productName" name="queryProductName" [nzPlaceHolder]="'请输入产品名称'" [nzId]="'queryProductName'"></nz-input>
+          <nz-select style="width: 120px;" name="queryProductName"  (nzSearchChange)="getModel()" [(ngModel)]="query.productId" [nzPlaceHolder]="'选择产品'" nzAllowClear>
+            <nz-option *ngFor="let option of products" [nzLabel]="option.label" [nzValue]="option">
+            </nz-option>
+          </nz-select>
+          <!-- <nz-input [nzSize]="'large'" [(ngModel)]="query.productName" name="queryProductName" [nzPlaceHolder]="'请输入产品名称'" [nzId]="'queryProductName'"></nz-input> -->
         </div>
       </div>
     </div>
@@ -16,7 +20,11 @@
           <label [attr.for]="'queryModelName'">型号名称</label>
         </div>
         <div nz-form-control nz-col [nzSpan]="16">
-          <nz-input [nzSize]="'large'" [(ngModel)]="query.modelName" name="queryModelName" [nzPlaceHolder]="'请输入型号名称'" [nzId]="'queryModelName'"></nz-input>
+          <nz-select style="width: 120px;" name="queryModelName" [(ngModel)]="query.modelId" [nzPlaceHolder]="'选择型号'" nzAllowClear>
+            <nz-option *ngFor="let option of models" [nzLabel]="option.label" [nzValue]="option">
+            </nz-option>
+          </nz-select>
+          <!-- <nz-input [nzSize]="'large'" [(ngModel)]="query.modelName" name="queryModelName" [nzPlaceHolder]="'请输入型号名称'" [nzId]="'queryModelName'"></nz-input> -->
         </div>
       </div>
     </div>
@@ -39,48 +47,47 @@
     </div>
   </div>
 </form>
-
-<nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10">
-  <thead nz-thead>
-    <tr>
-      <th nz-th>
-        <span>编号</span>
-      </th>
-      <th nz-th>
-        <span>产品</span>
-      </th>
-      <th nz-th>
-        <span>型号</span>
-      </th>
-      <th nz-th>
-        <span>规格</span>
-      </th>
-      <th nz-th>
-        <span>数量</span>
-      </th>
-      <th nz-th>
-        <span>单价</span>
-      </th>
-      <th nz-th>
-        <span>吨价</span>
-      </th>
-      <th nz-th>
-        <span>上次更新</span>
-      </th>
-    </tr>
-  </thead>
-  <tbody nz-tbody>
-    <tr nz-tbody-tr *ngFor="let data of data">
-      <td nz-td>{{data.order}}</td>
-      <td nz-td>
-        <a>{{data.product_name}}</a>
-      </td>
-      <td nz-td>{{data.model_name}}</td>
-      <td nz-td>{{data.spec_name}}</td>
-      <td nz-td>{{data.number}}</td>
-      <td nz-td>{{data.unit_price}}</td>
-      <td nz-td>{{data.t_price}}</td>
-      <td nz-td>{{data.update_date | date:'yyyy-MM-dd'}}</td>
-    </tr>
-  </tbody>
-</nz-table>
+<div class="search-result-list">
+  <nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10">
+    <thead nz-thead>
+      <tr>
+        <th nz-th>
+          <span>编号</span>
+        </th>
+        <th nz-th>
+          <span>产品</span>
+        </th>
+        <th nz-th>
+          <span>型号</span>
+        </th>
+        <th nz-th>
+          <span>规格</span>
+        </th>
+        <th nz-th>
+          <span>数量</span>
+        </th>
+        <th nz-th>
+          <span>单价</span>
+        </th>
+        <th nz-th>
+          <span>吨价</span>
+        </th>
+        <th nz-th>
+          <span>上次更新</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+        <td nz-td>{{data.order}}</td>
+        <td nz-td>{{data.product_name}}</td>
+        <td nz-td>{{data.model_name}}</td>
+        <td nz-td>{{data.spec_name}}</td>
+        <td nz-td>{{data.number}}</td>
+        <td nz-td>{{data.unit_price}}</td>
+        <td nz-td>{{data.t_price}}</td>
+        <td nz-td>{{data.update_date | date:'yyyy-MM-dd'}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

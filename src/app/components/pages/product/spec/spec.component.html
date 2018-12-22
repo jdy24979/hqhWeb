@@ -52,6 +52,9 @@
       <button nz-button [nzType]="'primary'" (click)="showConfirm()" [disabled]="!_allChecked && !_indeterminate" style="float: left;">
         删除
       </button>
+      <button nz-button [nzType]="'primary'" (click)="exportFn()" style="float: left;">
+        导出
+      </button>
     </div>
   </div>
 </form>

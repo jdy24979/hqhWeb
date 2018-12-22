@@ -185,4 +185,12 @@ export class SpecComponent implements OnInit {
       }
     });
   };
+
+  exportFn(){
+    this.http.post('./api/spec/export', this.query)
+      .subscribe(res => {
+        console.log(res)
+        //this.data = this.sortService.sort(res['list']);
+      });
+  }
 }
