@@ -15,9 +15,10 @@ export class BillAddComponent implements OnInit {
     type:"",
     tel:"",
     rela_t_id:this.PageInfoService.curTotalId,
-    date: +new Date(),
     description:"",
-    amount:0
+    amount:0,
+    _date:new Date(),
+    date:0
   };
   data=[];
   detailInfo;
@@ -41,7 +42,7 @@ export class BillAddComponent implements OnInit {
       this.addInfo.tel = res['tel'] || "";
       this.addInfo.type = res['type'];
       this.addInfo.rela_t_id = this.PageInfoService.curTotalId;
-      this.addInfo.date = +new Date();
+      this.addInfo._date = new Date();
     })
   }
 
@@ -149,6 +150,7 @@ _allChecked = false;
       desc += element.model_name + element.product_name +";"
     }
     this.addInfo.description = desc;
+    this.addInfo.date = +this.addInfo._date;
     this.http.post("./api/billList/add",{
       addInfo:this.addInfo,
       detail:this.data
